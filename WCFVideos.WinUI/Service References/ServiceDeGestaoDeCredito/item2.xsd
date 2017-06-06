@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8766/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" />
+  <xs:element name="RecuperarQuantidadeDeRecursoDisponivel">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarQuantidadeDeRecursoDisponivelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RecuperarQuantidadeDeRecursoDisponivelResult" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AnalisarProposta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" minOccurs="0" name="proposta" nillable="true" type="q1:Proposta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EfetivarProposta">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" minOccurs="0" name="proposta" nillable="true" type="q2:Proposta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarPropostas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" minOccurs="0" name="status" type="q3:Status" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecuperarPropostasResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" minOccurs="0" name="RecuperarPropostasResult" nillable="true" type="q4:ArrayOfProposta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PropostaAnalisada">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" minOccurs="0" name="proposta" nillable="true" type="q5:Proposta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

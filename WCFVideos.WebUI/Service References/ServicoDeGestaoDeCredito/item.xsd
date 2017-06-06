@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCFVideos.Contratos" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="DetalhesDoErro">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Mensagem" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DetalhesDoErro" nillable="true" type="tns:DetalhesDoErro" />
+  <xs:complexType name="Proposta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:Cliente" />
+      <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Emprestimo" nillable="true" type="tns:Emprestimo" />
+      <xs:element minOccurs="0" name="Numero" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="tns:Status" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Proposta" nillable="true" type="tns:Proposta" />
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Empresa" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Idade" type="xs:int" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Salario" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente" />
+  <xs:complexType name="Emprestimo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="QuantidadeDeParcelas" type="xs:int" />
+      <xs:element minOccurs="0" name="TaxaDeJuros" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Valor" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Emprestimo" nillable="true" type="tns:Emprestimo" />
+  <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Aprovada" />
+      <xs:enumeration value="Rejeitada" />
+      <xs:enumeration value="EmAnalise" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ArrayOfProposta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Proposta" nillable="true" type="tns:Proposta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProposta" nillable="true" type="tns:ArrayOfProposta" />
+</xs:schema>
